@@ -1,0 +1,20 @@
+/*
+Input :  123
+Output : 321
+*/
+
+#include <iostream>
+using namespace std;
+
+int main() {
+int n;
+cin>>n;
+int ans=0;
+while (n!=0)
+{
+int d= n%10;        // -----------> by this we get last digit
+ ans =(ans*10)+d;         // -----------> by this we get reverse order
+n=n/10;                // ----------> by this we get every digit execpt last digit
+}
+cout<<ans;
+}
