@@ -1,0 +1,36 @@
+/*
+Input: nums = [2,3,-2,4]
+Output: 6
+Explanation: [2,3] has the largest product 6.
+*/
+
+#include <iostream>
+#include <limits.h>
+using namespace std;
+
+int maxp(int arr[],int n){
+int maxx =INT_MIN;
+int p=1;
+for(int i=0;i<n;i++){
+p*=arr[i];
+maxx=max(maxx,p);
+if(p==0){
+    p=1;
+}}
+p=1;
+for(int i=n-1;i>=0;i--){
+p*=arr[i];
+maxx=max(maxx,p);
+if(p==0){
+    p=1;
+}}
+cout<<maxx;
+return maxx;
+}
+
+int main() {
+    int arr[4]={2,3,4,0};
+    int n=sizeof(arr)/sizeof(arr[0]);
+    maxp(arr,n);
+return 0;
+}
